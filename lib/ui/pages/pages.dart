@@ -7,3 +7,5 @@ import 'package:provider/provider.dart';
 
 part 'splash_pages.dart';
 part 'sign_in_pages.dart';
+part 'home_pages.dart';
+part 'sign_up_pages.dart';

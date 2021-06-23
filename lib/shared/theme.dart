@@ -10,3 +10,9 @@ TextStyle blackFontStyle = GoogleFonts.poppins()
 
 TextStyle whiteFontStyle = GoogleFonts.poppins()
     .copyWith(color: Colors.white, fontWeight: FontWeight.w500);
+
+TextStyle purpleFontStyle = GoogleFonts.poppins()
+    .copyWith(color: mainColor, fontWeight: FontWeight.w500);
+
+TextStyle greyFontStyle = GoogleFonts.poppins()
+    .copyWith(color: greyColor, fontWeight: FontWeight.w500);
