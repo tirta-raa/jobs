@@ -13,7 +13,11 @@ class _SplashPagesState extends State<SplashPages> {
     super.initState();
     Timer(Duration(seconds: 2), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => SignInPages()));
+        context,
+        MaterialPageRoute(
+          builder: (context) => OnboardingPages(),
+        ),
+      );
     });
   }
   // *kode di atas adalah untuk pindah halaman menggunakan waktu

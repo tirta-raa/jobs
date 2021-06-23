@@ -144,7 +144,7 @@ class SignUp extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => SignInPages()),
+                              builder: (context) => OnboardingPages()),
                         );
                       },
                       child: Text('Back to Sign In',
