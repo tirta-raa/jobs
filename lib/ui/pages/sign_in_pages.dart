@@ -1,7 +1,15 @@
 part of 'pages.dart';
 
-class SignUpPages extends StatelessWidget {
-  const SignUpPages({Key? key}) : super(key: key);
+class SignInPages extends StatefulWidget {
+  const SignInPages({Key? key}) : super(key: key);
+
+  @override
+  State<SignInPages> createState() => _SignInPagesState();
+}
+
+class _SignInPagesState extends State<SignInPages> {
+  bool isEmailValid = true;
+  TextEditingController emailControler = TextEditingController(text: '');
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +24,7 @@ class SignUpPages extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    'Sign Up',
+                    'Sign In',
                     style: greyFontStyle.copyWith(
                       fontSize: 16,
                     ),
@@ -25,7 +33,7 @@ class SignUpPages extends StatelessWidget {
                     height: 2,
                   ),
                   Text(
-                    'Begin New Journey',
+                    'Build Your Career',
                     style: blackFontStyle.copyWith(
                       fontSize: 24,
                     ),
@@ -35,40 +43,47 @@ class SignUpPages extends StatelessWidget {
                   ),
                   Center(
                     child: Image.asset(
-                      'assets/image_profile.png',
-                      height: 120,
+                      'assets/image_sign_in.png',
+                      height: 240,
+                      width: 262,
                     ),
                   ),
                   SizedBox(
                     height: 50,
                   ),
                   Text(
-                    'Full Name',
-                    style: greyFontStyle.copyWith(fontSize: 16),
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      fillColor: Color(0xffF1F0F5),
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(100),
-                          borderSide: BorderSide.none),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
                     'Email Adress',
                     style: greyFontStyle.copyWith(fontSize: 16),
                   ),
                   TextFormField(
+                    controller: emailControler,
+                    onChanged: (value) {
+                      bool isValid = EmailValidator.validate(value);
+                      print(isValid);
+                      if (isValid) {
+                        setState(() {
+                          isEmailValid = true;
+                        });
+                      } else {
+                        setState(() {
+                          isEmailValid = false;
+                        });
+                      }
+                    },
                     decoration: InputDecoration(
                       fillColor: Color(0xffF1F0F5),
                       filled: true,
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(100),
                           borderSide: BorderSide.none),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide(
+                          color: isEmailValid
+                              ? Color(0xff4141A4)
+                              : Color(0xffFD4F56),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -79,28 +94,21 @@ class SignUpPages extends StatelessWidget {
                     style: greyFontStyle.copyWith(fontSize: 16),
                   ),
                   TextFormField(
+                    obscureText: true,
                     decoration: InputDecoration(
                       fillColor: Color(0xffF1F0F5),
                       filled: true,
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(100),
                           borderSide: BorderSide.none),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'Your Goals',
-                    style: greyFontStyle.copyWith(fontSize: 16),
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      fillColor: Color(0xffF1F0F5),
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(100),
-                          borderSide: BorderSide.none),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide(
+                          color: isEmailValid
+                              ? Color(0xff4141A4)
+                              : Color(0xffFD4F56),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -131,7 +139,7 @@ class SignUpPages extends StatelessWidget {
                         );
                       },
                       child: Text(
-                        'Sign Up',
+                        'Sign In',
                         style: whiteFontStyle.copyWith(
                           fontSize: 14,
                         ),
@@ -144,12 +152,12 @@ class SignUpPages extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SignInPages(),
+                            builder: (context) => SignUpPages(),
                           ),
                         );
                       },
                       child: Text(
-                        'Back to Sign In',
+                        'Create New Account',
                         style: greyFontStyle.copyWith(fontSize: 14),
                       ),
                     ),

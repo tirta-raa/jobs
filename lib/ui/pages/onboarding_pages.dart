@@ -60,7 +60,7 @@ class OnboardingPages extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SignUp(),
+                              builder: (context) => SignUpPages(),
                             ),
                           );
                         },
@@ -89,7 +89,7 @@ class OnboardingPages extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomePages(),
+                              builder: (context) => SignInPages(),
                             ),
                           );
                         },
