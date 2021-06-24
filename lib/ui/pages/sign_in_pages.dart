@@ -140,7 +140,7 @@ class _SignInPagesState extends State<SignInPages> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SignUpPages(),
+                            builder: (context) => HomePages(),
                           ),
                         );
                       },

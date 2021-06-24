@@ -6,7 +6,7 @@ Color blackColor = '272C2F'.toColor();
 Color greyColor = 'B3B5C4'.toColor();
 
 TextStyle blackFontStyle = GoogleFonts.poppins()
-    .copyWith(color: blackColor, fontWeight: FontWeight.w600);
+    .copyWith(color: blackColor, fontWeight: FontWeight.w500);
 
 TextStyle whiteFontStyle = GoogleFonts.poppins()
     .copyWith(color: Colors.white, fontWeight: FontWeight.w500);
