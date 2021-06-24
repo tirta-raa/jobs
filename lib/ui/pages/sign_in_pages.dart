@@ -70,6 +70,11 @@ class _SignInPagesState extends State<SignInPages> {
                         });
                       }
                     },
+                    // arti kode di atas controler email controler itu kondisi yang udah di buat di atas
+                    // onchangned itu ketika berubah value udah bawaan dari sana
+                    // boolean isValid atau bikin sendiri nama validasinya emailvalidator itu bawaan dari pub email validator
+                    // if jika isValid setstate(ketika ada perubaaahn) isEmailvalid itu boolean yang ada di paling atas true
+                    // else selain dari itu false
                     decoration: InputDecoration(
                       fillColor: Color(0xffF1F0F5),
                       filled: true,
@@ -82,6 +87,7 @@ class _SignInPagesState extends State<SignInPages> {
                           color: isEmailValid
                               ? Color(0xff4141A4)
                               : Color(0xffFD4F56),
+                          // arti kode di atas ketika true tampilkan warna biru selain itu tampilkan warna merah
                         ),
                       ),
                     ),
@@ -145,6 +151,9 @@ class _SignInPagesState extends State<SignInPages> {
                         ),
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    height: 20,
                   ),
                   Container(
                     child: TextButton(

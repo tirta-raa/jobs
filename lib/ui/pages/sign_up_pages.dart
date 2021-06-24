@@ -1,10 +1,58 @@
 part of 'pages.dart';
 
-class SignUpPages extends StatelessWidget {
+class SignUpPages extends StatefulWidget {
   const SignUpPages({Key? key}) : super(key: key);
 
   @override
+  State<SignUpPages> createState() => _SignUpPagesState();
+}
+
+class _SignUpPagesState extends State<SignUpPages> {
+  TextEditingController emailControler = TextEditingController(text: '');
+
+  bool isUploaded = false;
+  bool isEmailValid = true;
+
+  @override
   Widget build(BuildContext context) {
+    Widget uploadedImages() {
+      return Center(
+        child: InkWell(
+          onTap: () {
+            setState(() {
+              isUploaded = !isUploaded;
+            });
+          },
+          child: Container(
+            child: Image.asset(
+              'assets/icon_upload.png',
+              width: 120,
+              height: 120,
+            ),
+          ),
+        ),
+      );
+    }
+
+    Widget showedImages() {
+      return Center(
+        child: InkWell(
+          onTap: () {
+            setState(() {
+              isUploaded = !isUploaded;
+            });
+          },
+          child: Container(
+            child: Image.asset(
+              'assets/image_profile.png',
+              width: 120,
+              height: 120,
+            ),
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       body: SafeArea(
         bottom: false,
@@ -33,12 +81,7 @@ class SignUpPages extends StatelessWidget {
                   SizedBox(
                     height: 50,
                   ),
-                  Center(
-                    child: Image.asset(
-                      'assets/image_profile.png',
-                      height: 120,
-                    ),
-                  ),
+                  isUploaded ? showedImages() : uploadedImages(),
                   SizedBox(
                     height: 50,
                   ),
@@ -51,8 +94,15 @@ class SignUpPages extends StatelessWidget {
                       fillColor: Color(0xffF1F0F5),
                       filled: true,
                       enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(100),
-                          borderSide: BorderSide.none),
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide.none,
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide(
+                          color: Color(0xff4141A4),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -63,12 +113,36 @@ class SignUpPages extends StatelessWidget {
                     style: greyFontStyle.copyWith(fontSize: 16),
                   ),
                   TextFormField(
+                    onChanged: (value) {
+                      bool isValid = EmailValidator.validate(value);
+                      print(isValid);
+                      if (isValid) {
+                        setState(() {
+                          isEmailValid = true;
+                        });
+                      } else {
+                        setState(() {
+                          isEmailValid = false;
+                        });
+                      }
+                      ;
+                    },
+                    controller: emailControler,
                     decoration: InputDecoration(
                       fillColor: Color(0xffF1F0F5),
                       filled: true,
                       enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(100),
-                          borderSide: BorderSide.none),
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide.none,
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide(
+                          color: isEmailValid
+                              ? Color(0xff4141A4)
+                              : Color(0xffFD4F56),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -83,8 +157,15 @@ class SignUpPages extends StatelessWidget {
                       fillColor: Color(0xffF1F0F5),
                       filled: true,
                       enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(100),
-                          borderSide: BorderSide.none),
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide.none,
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide(
+                          color: Color(0xff4141A4),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -99,8 +180,15 @@ class SignUpPages extends StatelessWidget {
                       fillColor: Color(0xffF1F0F5),
                       filled: true,
                       enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(100),
-                          borderSide: BorderSide.none),
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide.none,
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide(
+                          color: Color(0xff4141A4),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
