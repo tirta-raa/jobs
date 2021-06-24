@@ -1,10 +1,10 @@
 import 'dart:async';
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:jobs/models/models.dart';
 import 'package:jobs/shared/shared.dart';
 import 'package:jobs/ui/widgets/widgets.dart';
-import 'package:provider/provider.dart';
+
 import 'package:email_validator/email_validator.dart';
 
 part 'splash_pages.dart';

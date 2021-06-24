@@ -1,6 +1,9 @@
 part of 'widgets.dart';
 
 class CategoriesCard extends StatelessWidget {
+  final Categories categories;
+  CategoriesCard(this.categories);
+
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -10,7 +13,7 @@ class CategoriesCard extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             Image.asset(
-              'assets/image_category1.png',
+              categories.imageUrl,
             ),
             Container(
               margin: EdgeInsets.only(
@@ -18,7 +21,7 @@ class CategoriesCard extends StatelessWidget {
                 left: 16,
               ),
               child: Text(
-                'Mobile\nDeveloper',
+                categories.text,
                 style: whiteFontStyle.copyWith(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,

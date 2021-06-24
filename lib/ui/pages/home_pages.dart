@@ -64,23 +64,48 @@ class HomePages extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  CategoriesCard(),
+                  CategoriesCard(
+                    Categories(
+                        id: 1,
+                        imageUrl: 'assets/image_category1.png',
+                        text: 'Web Developer'),
+                  ),
                   SizedBox(
                     width: 16,
                   ),
-                  CategoriesCard(),
+                  CategoriesCard(
+                    Categories(
+                        id: 2,
+                        imageUrl: 'assets/image_category2.png',
+                        text: 'Web Developer'),
+                  ),
                   SizedBox(
                     width: 16,
                   ),
-                  CategoriesCard(),
+                  CategoriesCard(
+                    Categories(
+                        id: 3,
+                        imageUrl: 'assets/image_category3.png',
+                        text: 'Web Developer'),
+                  ),
                   SizedBox(
                     width: 16,
                   ),
-                  CategoriesCard(),
+                  CategoriesCard(
+                    Categories(
+                        id: 4,
+                        imageUrl: 'assets/image_category4.png',
+                        text: 'Web Developer'),
+                  ),
                   SizedBox(
                     width: 16,
                   ),
-                  CategoriesCard(),
+                  CategoriesCard(
+                    Categories(
+                        id: 5,
+                        imageUrl: 'assets/image_category5.png',
+                        text: 'Web Developer'),
+                  ),
                   SizedBox(
                     width: 16,
                   ),
@@ -101,15 +126,36 @@ class HomePages extends StatelessWidget {
             SizedBox(
               height: 26,
             ),
-            PostedCard(),
+            JobsCard(
+              Jobs(
+                id: 1,
+                jobDesk: 'Front-End Developer',
+                company: 'Google',
+                imageUrl: 'assets/icon_google.png',
+              ),
+            ),
             SizedBox(
               height: 16,
             ),
-            PostedCard(),
+            JobsCard(
+              Jobs(
+                id: 2,
+                jobDesk: 'UI Designer',
+                company: 'Instagram',
+                imageUrl: 'assets/icon_instagram.png',
+              ),
+            ),
             SizedBox(
               height: 16,
             ),
-            PostedCard(),
+            JobsCard(
+              Jobs(
+                id: 3,
+                jobDesk: 'Data Scientist',
+                company: 'Facebook',
+                imageUrl: 'assets/icon_Facebook.png',
+              ),
+            ),
             SizedBox(
               height: 16,
             ),
