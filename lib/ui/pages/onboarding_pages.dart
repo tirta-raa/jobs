@@ -18,6 +18,7 @@ class OnboardingPages extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(
+                  top: 50,
                   left: 30,
                 ),
                 child: Column(

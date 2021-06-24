@@ -162,6 +162,46 @@ class HomePages extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: Container(
+        margin: EdgeInsets.only(
+          top: 30,
+        ),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          showSelectedLabels: false,
+          selectedItemColor: Color(0xff272C2F),
+          unselectedItemColor: Color(0xffB3B5C4),
+          currentIndex: 0,
+          elevation: 0,
+          iconSize: 24,
+          items: [
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage('assets/icon_home.png'),
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage('assets/icon_home.png'),
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage('assets/icon_home.png'),
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage('assets/icon_home.png'),
+              ),
+              label: '',
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
