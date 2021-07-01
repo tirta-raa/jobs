@@ -64,11 +64,21 @@ class HomePages extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
-                  CategoriesCard(
-                    Categories(
-                        id: 1,
-                        imageUrl: 'assets/image_category1.png',
-                        text: 'Web Developer'),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CategoriesPages(),
+                        ),
+                      );
+                    },
+                    child: CategoriesCard(
+                      Categories(
+                          id: 1,
+                          imageUrl: 'assets/image_category1.png',
+                          text: 'Web Developer'),
+                    ),
                   ),
                   SizedBox(
                     width: 16,
@@ -126,35 +136,39 @@ class HomePages extends StatelessWidget {
             SizedBox(
               height: 26,
             ),
-            JobsCard(
-              Jobs(
-                id: 1,
-                jobDesk: 'Front-End Developer',
-                company: 'Google',
-                imageUrl: 'assets/icon_google.png',
-              ),
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            JobsCard(
-              Jobs(
-                id: 2,
-                jobDesk: 'UI Designer',
-                company: 'Instagram',
-                imageUrl: 'assets/icon_instagram.png',
-              ),
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            JobsCard(
-              Jobs(
-                id: 3,
-                jobDesk: 'Data Scientist',
-                company: 'Facebook',
-                imageUrl: 'assets/icon_Facebook.png',
-              ),
+            Column(
+              children: <Widget>[
+                JobsCard(
+                  Jobs(
+                    id: 1,
+                    jobDesk: 'Front-End Developer',
+                    company: 'Google',
+                    imageUrl: 'assets/icon_google.png',
+                  ),
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                JobsCard(
+                  Jobs(
+                    id: 2,
+                    jobDesk: 'UI Designer',
+                    company: 'Instagram',
+                    imageUrl: 'assets/icon_instagram.png',
+                  ),
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                JobsCard(
+                  Jobs(
+                    id: 3,
+                    jobDesk: 'Data Scientist',
+                    company: 'Facebook',
+                    imageUrl: 'assets/icon_Facebook.png',
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               height: 16,
@@ -183,19 +197,19 @@ class HomePages extends StatelessWidget {
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
-                AssetImage('assets/icon_home.png'),
+                AssetImage('assets/icon_notification.png'),
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
-                AssetImage('assets/icon_home.png'),
+                AssetImage('assets/icon_love.png'),
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
-                AssetImage('assets/icon_home.png'),
+                AssetImage('assets/icon_user.png'),
               ),
               label: '',
             ),
