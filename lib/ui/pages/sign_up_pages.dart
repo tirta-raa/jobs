@@ -1,8 +1,6 @@
 part of 'pages.dart';
 
 class SignUpPages extends StatefulWidget {
-  const SignUpPages({Key? key}) : super(key: key);
-
   @override
   State<SignUpPages> createState() => _SignUpPagesState();
 }

@@ -1,8 +1,6 @@
 part of 'pages.dart';
 
 class SignInPages extends StatefulWidget {
-  const SignInPages({Key? key}) : super(key: key);
-
   @override
   State<SignInPages> createState() => _SignInPagesState();
 }

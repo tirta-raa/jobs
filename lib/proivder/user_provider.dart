@@ -1,7 +1,7 @@
 part of 'provider.dart';
 
 class UserProvider with ChangeNotifier {
-  late UserModels _user;
+  UserModels _user;
 
   UserModels get user => _user;
 

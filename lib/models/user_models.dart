@@ -1,18 +1,13 @@
 part of 'models.dart';
 
 class UserModels {
-  late int id;
-  late String email;
-  late String password;
-  late String name;
-  late String goal;
+  int id;
+  String email;
+  String password;
+  String name;
+  String goal;
 
-  UserModels(
-      {required this.email,
-      required this.goal,
-      required this.id,
-      required this.name,
-      required this.password});
+  UserModels({this.email, this.goal, this.id, this.name, this.password});
 
   UserModels.fromJson(Map<String, dynamic> json) {
     id = json['id'];

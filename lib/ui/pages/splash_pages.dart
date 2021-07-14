@@ -1,8 +1,6 @@
 part of 'pages.dart';
 
 class SplashPages extends StatefulWidget {
-  const SplashPages({Key? key}) : super(key: key);
-
   @override
   _SplashPagesState createState() => _SplashPagesState();
 }

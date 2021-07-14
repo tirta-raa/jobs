@@ -1,7 +1,7 @@
 part of 'provider.dart';
 
 class AuthProvider with ChangeNotifier {
-  Future<UserModels?> register(
+  Future<UserModels> register(
       String email, String password, String name, String goal) async {
     try {
       var body = {

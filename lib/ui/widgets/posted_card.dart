@@ -1,7 +1,7 @@
 part of 'widgets.dart';
 
 class JobsCard extends StatelessWidget {
-  final Jobs jobs;
+  Jobs jobs;
   JobsCard(this.jobs);
 
   @override

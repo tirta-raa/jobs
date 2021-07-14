@@ -1,8 +1,6 @@
 part of 'pages.dart';
 
 class OnboardingPages extends StatelessWidget {
-  const OnboardingPages({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

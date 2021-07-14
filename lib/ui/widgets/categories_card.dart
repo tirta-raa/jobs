@@ -1,7 +1,7 @@
 part of 'widgets.dart';
 
 class CategoriesCard extends StatelessWidget {
-  final Categories categories;
+  Categories categories;
   CategoriesCard(this.categories);
 
   @override

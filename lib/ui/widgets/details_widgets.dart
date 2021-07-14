@@ -1,8 +1,8 @@
 part of 'widgets.dart';
 
 class DetailsText extends StatelessWidget {
-  final String text;
-  DetailsText({required this.text});
+  String text;
+  DetailsText({this.text});
   @override
   Widget build(BuildContext context) {
     return Row(

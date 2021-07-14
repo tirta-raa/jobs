@@ -1,9 +1,9 @@
 part of 'models.dart';
 
 class Categories {
-  final int id;
-  final String text;
-  final String imageUrl;
+  int id;
+  String text;
+  String imageUrl;
 
-  Categories({required this.id, required this.text, required this.imageUrl});
+  Categories({this.id, this.text, this.imageUrl});
 }
